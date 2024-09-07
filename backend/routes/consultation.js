@@ -40,7 +40,7 @@ router.post("/getdoctor", async (req, res) => {
 
 router.post("/request/:id", async (req, res) => {
   try {
-    let token = req.body.token;
+    let token = req.body.token ;
     let data = jwt.decode(req.body.token);
     let patientEmail = data.email;
     let patinetRequests = await PatientRequestDoctor.findOne({
